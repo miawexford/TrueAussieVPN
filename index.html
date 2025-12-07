@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert VPN guidance for Australians from Mia Wexford. Learn how VPNs work, why you need one, and which services are best for Australia in 2026.">
+    <title>VPN Australia 2026 - Expert Advice from Mia Wexford | Secure Your Digital Life</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #004E89;
+            --accent-color: #1A659E;
+            --text-dark: #1B2021;
+            --text-light: #4A5859;
+            --bg-light: #F7F9FB;
+            --bg-white: #FFFFFF;
+            --success-color: #2D9F47;
+            --warning-color: #F77F00;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: var(--gradient-1);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+        }
+
+        .expert-intro {
+            background: var(--bg-white);
+            padding: 60px 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 2;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .expert-card {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .expert-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--gradient-2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .expert-info h2 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .expert-credentials {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+
+        .credential-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.15rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            gap: 10px;
+            transform: translateX(5px);
+        }
+
+        .stats-section {
+            background: var(--secondary-color);
+            color: white;
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .comparison-table {
+            background: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin: 40px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: var(--bg-light);
+        }
+
+        .check-icon {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .cross-icon {
+            color: #ef4444;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .faq-section {
+            background: var(--bg-white);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            padding: 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .chart-container {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .expert-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .expert-image {
+                margin: 0 auto;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+        }
+
+        .progress-bar {
+            height: 30px;
+            background: #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            color: white;
+            font-weight: 600;
+            transition: width 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🔒</div>
+                <span>VPN Australia</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-vpn-works.html">How VPNs Work</a></li>
+                <li><a href="vpn-safety-australia.html">Safety & Security</a></li>
+                <li><a href="vpn-setup-guide.html">Setup Guide</a></li>
+                <li><a href="vpn-cost-value.html">Cost & Value</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Your Trusted VPN Expert for Australia 2026</h1>
+            <p>Independent, expert guidance on protecting your digital privacy from Melbourne-based security specialist Mia Wexford, B.Sc. (IT Security), CISSP</p>
+            <a href="#why-vpn" class="cta-button">Discover Why You Need a VPN</a>
+        </div>
+    </section>
+
+    <section class="expert-intro">
+        <div class="container">
+            <div class="expert-card">
+                <div class="expert-image">👩‍💻</div>
+                <div class="expert-info">
+                    <h2>G'day! I'm Mia Wexford</h2>
+                    <div class="expert-credentials">
+                        <span class="credential-badge">CISSP Certified</span>
+                        <span class="credential-badge">15+ Years Experience</span>
+                        <span class="credential-badge">Melbourne Based</span>
+                    </div>
+                    <p>For over fifteen years, I've specialised in helping everyday Australians understand and implement practical cybersecurity solutions. As Australia's digital landscape evolves with new threats and privacy challenges in 2026, my mission remains clear: providing honest, expert guidance to protect your online privacy without corporate sponsorships or biased recommendations.</p>
+                    <a href="https://miawexford.top/about" class="card-link">Learn more about my background →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="why-vpn">
+        <div class="container">
+            <h2 class="section-title">Why Australians Need VPNs in 2026</h2>
+            <p class="section-subtitle">Understanding the critical role VPNs play in protecting your digital life</p>
+
+            <div class="highlight-box">
+                <p><strong>Mia's Insight:</strong> Many Australians ask me, "Do I really need a VPN?" The answer depends on whether you value your privacy. With Australia's mandatory data retention laws requiring ISPs to store your metadata for two years, and increasing cyber threats targeting Australian users, a VPN isn't just a luxury—it's essential protection for anyone who goes online.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Protection from Data Retention</h3>
+                    <p>Australia's metadata retention laws mean your ISP stores records of every website you visit for two years. A VPN encrypts your internet traffic, preventing your ISP from logging your online activities whilst maintaining compliance with Australian law.</p>
+                    <a href="how-vpn-works.html#encryption" class="card-link">Learn how encryption works →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Secure Public Wi-Fi</h3>
+                    <p>Using public Wi-Fi at cafés, airports, or hotels exposes you to hackers who can intercept your data. When you use a VPN on iPhone or Android, your connection is encrypted even on unsecured networks, protecting your passwords, banking details, and personal information.</p>
+                    <a href="vpn-safety-australia.html#public-wifi" class="card-link">Understand public Wi-Fi risks →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>Avoid Geographic Pricing</h3>
+                    <p>The "Australia tax" means we often pay significantly more for digital services and products. A VPN allows you to access better pricing on software, streaming services, and online purchases by connecting through servers in different regions.</p>
+                    <a href="vpn-cost-value.html#australia-tax" class="card-link">Calculate your potential savings →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📺</div>
+                    <h3>Access Global Content</h3>
+                    <p>Streaming services restrict content based on geographic location. With a VPN, you can access international libraries of Netflix, Disney+, BBC iPlayer, and other services whilst travelling or from home, dramatically expanding your entertainment options.</p>
+                    <a href="vpn-setup-guide.html#streaming" class="card-link">Setup guide for streaming →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>Protect Against Hackers</h3>
+                    <p>Cybercriminals increasingly target Australian users. A VPN hides your IP address, making it significantly harder for hackers to track your location, launch targeted attacks, or steal your personal information through man-in-the-middle attacks.</p>
+                    <a href="vpn-safety-australia.html#cyber-threats" class="card-link">Understand cyber threats →</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">✈️</div>
+                    <h3>Stay Connected Whilst Travelling</h3>
+                    <p>When you travel overseas, a VPN lets you access your Australian banking, Centrelink, myGov, and other services that may be restricted outside Australia. It also protects you on foreign networks where security standards may be lower.</p>
+                    <a href="vpn-setup-guide.html#travel" class="card-link">Travel setup tips →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">VPN Usage in Australia: 2026 Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>43%</h3>
+                    <p>of Australians now use VPNs regularly</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2 Years</h3>
+                    <p>ISPs must retain your metadata</p>
+                </div>
+                <div class="stat-item">
+                    <h3>67%</h3>
+                    <p>concerned about online privacy</p>
+                </div>
+                <div class="stat-item">
+                    <h3>$8-15</h3>
+                    <p>average monthly VPN cost (AUD)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How Does a VPN Work?</h2>
+            <p class="section-subtitle">Understanding VPN technology in plain English</p>
+
+            <div class="grid-2">
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Without VPN</h3>
+                    <div class="card">
+                        <p><strong>Your Device</strong> → Internet Service Provider (sees everything) → Website</p>
+                        <ul style="margin-top: 15px; color: var(--text-light); line-height: 2;">
+                            <li>✗ ISP logs all your activities</li>
+                            <li>✗ Your real IP address is exposed</li>
+                            <li>✗ Data can be intercepted</li>
+                            <li>✗ Geographic restrictions apply</li>
+                            <li>✗ Vulnerable on public Wi-Fi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--success-color); margin-bottom: 20px;">With VPN</h3>
+                    <div class="card">
+                        <p><strong>Your Device</strong> → Encrypted Tunnel → VPN Server → Website</p>
+                        <ul style="margin-top: 15px; color: var(--text-light); line-height: 2;">
+                            <li>✓ ISP only sees encrypted data</li>
+                            <li>✓ Your IP address is hidden</li>
+                            <li>✓ Military-grade encryption protects data</li>
+                            <li>✓ Appear to browse from different locations</li>
+                            <li>✓ Secure on any network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+                <h3 style="color: var(--secondary-color); margin-bottom: 15px;">Mia's Plain English Explanation</h3>
+                <p>Think of a VPN as a secure tunnel between your device and the internet. When you use a VPN on your iPhone, Android, or computer, your internet traffic travels through this encrypted tunnel to a VPN server before reaching its final destination. Your ISP can see you're connected to a VPN, but they cannot see what websites you visit or what data you send and receive. The websites you visit see the VPN server's IP address, not yours, protecting your identity and location.</p>
+                <a href="how-vpn-works.html" class="card-link">Detailed technical explanation →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--bg-white);">
+        <div class="container">
+            <h2 class="section-title">Is a VPN Worth It? Cost vs. Value Analysis</h2>
+            <p class="section-subtitle">Understanding the real value proposition for Australian users</p>
+
+            <div class="chart-container">
+                <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Average Monthly Costs (AUD)</h3>
+                <div style="margin: 20px 0;">
+                    <p style="margin-bottom: 8px; font-weight: 600;">Premium VPNs (e.g., ExpressVPN, NordVPN)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;">$10-15/month</div>
+                    </div>
+                </div>
+                <div style="margin: 20px 0;">
+                    <p style="margin-bottom: 8px; font-weight: 600;">Mid-Range VPNs (e.g., Surfshark, CyberGhost)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;">$5-8/month</div>
+                    </div>
+                </div>
+                <div style="margin: 20px 0;">
+                    <p style="margin-bottom: 8px; font-weight: 600;">Budget VPNs (annual plans)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;">$2-4/month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>What You Get</th>
+                            <th>Annual Value (AUD)</th>
+                            <th>Worth It?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Privacy Protection</strong><br>Hide browsing from ISP tracking</td>
+                            <td>Priceless</td>
+                            <td><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Security on Public Wi-Fi</strong><br>Protection at cafés, airports, hotels</td>
+                            <td>$500+ (average identity theft cost)</td>
+                            <td><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Avoid Australia Tax</strong><br>Better prices on digital services</td>
+                            <td>$100-300 savings/year</td>
+                            <td><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Access Global Streaming</strong><br>Full Netflix, Disney+, BBC libraries</td>
+                            <td>$200+ value in content</td>
+                            <td><span class="check-icon">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Annual Cost</strong><br>Premium VPN subscription</td>
+                            <td>$120-180/year</td>
+                            <td><span class="check-icon">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="color: var(--secondary-color); margin-bottom: 15px;">Mia's Value Assessment</h3>
+                <p>After analysing the costs and benefits, I can confidently say a VPN is worth it for most Australians. Even if you only consider the financial savings from avoiding geographic pricing and the security benefit of protecting yourself on public Wi-Fi, the value exceeds the cost of a quality VPN subscription. When you add the privacy protection from ISP surveillance and access to global content, it's one of the best investments you can make in your digital life. The question isn't whether a VPN is worth it—it's which VPN offers the best value for Australian users.</p>
+                <a href="vpn-cost-value.html" class="card-link">Detailed cost-benefit analysis →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Common Questions About VPNs</h2>
+            <p class="section-subtitle">Expert answers to what Australians ask most</p>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is VPN legal in Australia? ▼
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, using a VPN is completely legal in Australia. Australians have the right to use VPN services to protect their privacy and security online. However, using a VPN to engage in illegal activities remains illegal—a VPN doesn't make unlawful behaviour lawful. You can legally use a VPN for privacy protection, accessing geo-restricted content, securing your connection on public Wi-Fi, and protecting your data from surveillance. The confusion often arises because some countries like China restrict VPN use, but Australia has no such restrictions.</p>
+                        <p style="margin-top: 15px;"><strong>Read my detailed legal analysis:</strong> <a href="vpn-safety-australia.html#legal-status" style="color: var(--primary-color);">VPN legality in Australia</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need a VPN on my iPhone or Android phone? ▼
+                    </div>
+                    <div class="faq-answer">
+                        <p>If you ever use public Wi-Fi, access sensitive information online, or care about your privacy, then yes, you need a VPN on your phone. Mobile devices are particularly vulnerable because we use them everywhere—cafés, shopping centres, airports, hotels. Every time you connect to public Wi-Fi without a VPN, you're potentially exposing your passwords, banking information, and personal data to hackers on the same network.</p>
+                        <p style="margin-top: 15px;">Setting up a VPN on iPhone or Android is straightforward. Most quality VPN providers offer dedicated apps that connect with a single tap. Once configured, you can set your VPN to automatically activate when you join public Wi-Fi networks, providing seamless protection without thinking about it.</p>
+                        <p style="margin-top: 15px;"><strong>Step-by-step instructions:</strong> <a href="vpn-setup-guide.html#mobile-setup" style="color: var(--primary-color);">How to use VPN on iPhone and Android</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much does a VPN cost in Australia? ▼
+                    </div>
+                    <div class="faq-answer">
+                        <p>VPN pricing in Australia typically ranges from $2 to $15 per month (AUD), depending on the provider and subscription length. Premium services like ExpressVPN and NordVPN cost around $10-15 monthly but drop to $8-10 per month with annual plans. Mid-range options like Surfshark and CyberGhost offer excellent value at $5-8 monthly. Budget providers can cost as little as $2-4 per month with long-term commitments.</p>
+                        <p style="margin-top: 15px;">My advice: Don't choose based solely on price. The cheapest VPN isn't worth it if it's slow, unreliable, or doesn't protect your privacy. Similarly, the most expensive isn't automatically the best. Focus on value—what features, performance, and privacy protection you get for your money. For most Australians, I recommend mid-range to premium services that balance cost with quality.</p>
+                        <p style="margin-top: 15px;"><strong>Detailed pricing analysis:</strong> <a href="vpn-cost-value.html#pricing-breakdown" style="color: var(--primary-color);">How much is a VPN per month?</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can VPN be tracked by government or ISP? ▼
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your ISP can see that you're using a VPN—they can identify the encrypted connection to a VPN server—but they cannot see what you're doing through that VPN. They cannot track which websites you visit, what data you send or receive, or any details of your online activities. The content of your internet traffic is encrypted and hidden from your ISP.</p>
+                        <p style="margin-top: 15px;">Regarding government tracking: Australian authorities cannot directly track your VPN-protected internet activities. However, if you're under active investigation, authorities could potentially request data from your VPN provider. This is why choosing a VPN with a genuine no-logs policy and favourable jurisdiction is important. Quality VPNs based outside the Five Eyes alliance (which includes Australia) provide the strongest protection against potential data requests.</p>
+                        <p style="margin-top: 15px;"><strong>Understanding VPN limitations:</strong> <a href="vpn-safety-australia.html#government-tracking" style="color: var(--primary-color);">Can VPN be tracked?</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does VPN work in China or other restrictive countries? ▼
+                    </div>
+                    <div class="faq-answer">
+                        <p>China actively blocks most VPN services, making it challenging but not impossible to use VPNs there. Some VPN providers—particularly ExpressVPN, NordVPN, and Surfshark—have developed technologies to work in China, though reliability varies. If you're planning to travel to China, set up your VPN before you arrive, as downloading VPN apps from within China is difficult.</p>
+                        <p style="margin-top: 15px;">The key is choosing a VPN that specifically advertises China compatibility and uses obfuscation technology to disguise VPN traffic as regular HTTPS traffic. Not all VPNs work in China, and those that do may experience periodic disruptions when the Great Firewall is updated. Always have backup VPN apps installed before travelling to restrictive countries.</p>
+                        <p style="margin-top: 15px;"><strong>Travel preparation:</strong> <a href="vpn-setup-guide.html#china-vpn" style="color: var(--primary-color);">Which VPN works in China?</a></p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Does VPN drain battery or slow down internet? ▼
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, VPNs do consume additional battery on mobile devices because encryption and maintaining a secure connection requires processing power. However, with modern smartphones and efficient VPN apps, the battery impact is typically modest—around 5-15% additional battery drain. The exact impact depends on your VPN protocol (WireGuard uses less battery than OpenVPN), your phone's processor, and how actively you're using the internet.</p>
+                        <p style="margin-top: 15px;">Regarding internet speed: VPNs do slightly reduce your internet speed because your data takes a longer route (through the VPN server) and requires encryption/decryption. Quality VPNs typically reduce speeds by 10-30%. With Australia's improving internet infrastructure in 2026, this speed reduction is rarely noticeable for browsing, streaming, or general use. Poor-quality VPNs can significantly slow your connection, which is why choosing a reputable provider matters.</p>
+                        <p style="margin-top: 15px;"><strong>Performance optimization:</strong> <a href="how-vpn-works.html#performance" style="color: var(--primary-color);">Does VPN slow down internet speed?</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--gradient-1); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px; font-size: 2.5rem;">Ready to Protect Your Privacy?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">Explore my expert guidance on choosing, setting up, and using VPNs effectively</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="how-vpn-works.html" class="cta-button">Learn How VPNs Work</a>
+                <a href="vpn-setup-guide.html" class="cta-button" style="background: white; color: var(--primary-color);">Setup Guide</a>
+                <a href="vpn-cost-value.html" class="cta-button">Compare Costs & Value</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Mia Wexford</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7;">Melbourne-based IT security specialist with 15+ years experience. CISSP certified and dedicated to helping Australians protect their digital privacy through expert, independent guidance.</p>
+                    <a href="https://miawexford.top/about" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Full Biography →</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-vpn-works.html">How VPNs Work</a></li>
+                        <li><a href="vpn-safety-australia.html">Safety & Security</a></li>
+                        <li><a href="vpn-setup-guide.html">Setup Guide</a></li>
+                        <li><a href="vpn-cost-value.html">Cost & Value</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Trusted Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.cyber.gov.au/" target="_blank" rel="noopener">Australian Cyber Security Centre</a></li>
+                        <li><a href="https://www.oaic.gov.au/" target="_blank" rel="noopener">Office of the Australian Information Commissioner</a></li>
+                        <li><a href="https://www.esafety.gov.au/" target="_blank" rel="noopener">eSafety Commissioner</a></li>
+                        <li><a href="https://www.accc.gov.au/consumers/scams" target="_blank" rel="noopener">ACCC Scam Watch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Expert Disclaimer</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6;">This website provides educational information about VPN technology and cybersecurity. Whilst I strive for accuracy, technology evolves rapidly. Always verify current information with official sources and choose VPN services based on your specific needs.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mia Wexford - Independent VPN & Security Consultant. All rights reserved.</p>
+                <p style="margin-top: 10px;">Last updated: January 2026 | Melbourne, Australia</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

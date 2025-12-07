@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete VPN setup guide for Australians. Step-by-step instructions from Mia Wexford for iPhone, Android, Windows, Mac, and router configuration.">
+    <title>How to Setup a VPN: Complete Australian Guide 2026 | Mia Wexford</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF6B35;
+            --secondary-color: #004E89;
+            --accent-color: #1A659E;
+            --text-dark: #1B2021;
+            --text-light: #4A5859;
+            --bg-light: #F7F9FB;
+            --bg-white: #FFFFFF;
+            --success-color: #2D9F47;
+            --warning-color: #F77F00;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb {
+            background: var(--bg-white);
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .breadcrumb-content {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .page-header {
+            background: var(--gradient-1);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .article-content {
+            background: var(--bg-white);
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .article-content h2 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            font-weight: 700;
+        }
+
+        .article-content h3 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            font-weight: 600;
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 20px 0 20px 30px;
+            color: var(--text-light);
+        }
+
+        .article-content li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid var(--warning-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            border: 2px solid var(--accent-color);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .info-box h4 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .step-card {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .device-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .device-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .device-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .comparison-table {
+            background: var(--bg-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            margin: 40px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: var(--bg-light);
+        }
+
+        .related-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .related-card {
+            background: var(--bg-white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .related-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .related-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 30px 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🔒</div>
+                <span>VPN Australia</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="how-vpn-works.html">How VPNs Work</a></li>
+                <li><a href="vpn-safety-australia.html">Safety & Security</a></li>
+                <li><a href="vpn-setup-guide.html">Setup Guide</a></li>
+                <li><a href="vpn-cost-value.html">Cost & Value</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container breadcrumb-content">
+            <a href="index.html">Home</a> <span>›</span> <span>VPN Setup Guide</span>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Complete VPN Setup Guide</h1>
+            <p>Step-by-step instructions for all devices—from mobile to router configuration</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <article class="article-content">
+                <div class="highlight-box">
+                    <p><strong>From Mia:</strong> After helping thousands of Australians set up VPNs over the past fifteen years, I've learned that most people abandon VPNs not because they don't value privacy, but because setup seems complicated. It isn't. This detailed guide walks you through setting up VPNs on every device you own—iPhone, Android, Windows, Mac, and even your router—with straightforward instructions that require no technical expertise. By the end, you'll have secure, properly configured VPN protection across all your devices.</p>
+                </div>
+
+                <h2 id="before-setup">Before You Begin: Choosing Your VPN Service</h2>
+
+                <p>Before diving into setup instructions, you need a VPN subscription. <a href="vpn-cost-value.html">My cost and value analysis provides detailed provider comparisons</a>, but here's a quick decision framework for Australians in 2026:</p>
+
+                <div class="device-grid">
+                    <div class="device-card">
+                        <div class="device-icon">🏆</div>
+                        <h3>Premium Choice</h3>
+                        <p><strong>ExpressVPN</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 10px;">Best overall performance, works reliably in restrictive countries, excellent Australian server speeds</p>
+                    </div>
+
+                    <div class="device-card">
+                        <div class="device-icon">⚖️</div>
+                        <h3>Best Value</h3>
+                        <p><strong>Surfshark</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 10px;">Excellent balance of price and features, unlimited devices, great for Australian families</p>
+                    </div>
+
+                    <div class="device-card">
+                        <div class="device-icon">🔐</div>
+                        <h3>Security Focus</h3>
+                        <p><strong>NordVPN</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 10px;">Verified no-logs, independent audits, advanced security features, good Australian speeds</p>
+                    </div>
+                </div>
+
+                <p>All three providers offer 30-day money-back guarantees, allowing you to test performance from your Australian connection before committing. Once you've chosen and subscribed, you're ready to set up your devices.</p>
+
+                <h2 id="mobile-setup">How to Set Up VPN on iPhone</h2>
+
+                <p>Setting up a VPN on your iPhone takes less than five minutes and requires no technical knowledge. iPhones running iOS 12 or later support all modern VPN apps and protocols.</p>
+
+                <div class="step-card">
+                    <h3><span class="step-number">1</span> Download Your VPN App</h3>
+                    <p>Open the App Store and search for your VPN provider's official app. Verify authenticity by checking the developer name matches your provider (e.g., "ExpressVPN" should show developer "ExpressVPN"). Download and install the app—it's typically 50-100MB in size.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">2</span> Create or Log Into Your Account</h3>
+                    <p>Open the app and either create a new account (if you haven't subscribed yet) or log in with your existing credentials. Most providers use email and password, though some use activation codes from your account dashboard. Keep your credentials secure—consider using a password manager.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">3</span> Grant VPN Permissions</h3>
+                    <p>iOS will display a dialogue asking permission to add VPN configurations to your device. This is normal and necessary—VPNs cannot function without this permission. Tap "Allow" and authenticate with Face ID, Touch ID, or your device passcode. This is a one-time authorisation.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">4</span> Choose Your Protocol</h3>
+                    <p>Most VPN apps default to automatic protocol selection, which is fine for most users. However, for optimal performance, I recommend manually selecting WireGuard if available (fastest, best battery life) or IKEv2 for reliability. Access protocol settings through the app's settings or preferences menu.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">5</span> Connect to a Server</h3>
+                    <p>Tap the connection button (usually a large button in the centre of the screen). For best speed, choose an Australian server (Sydney or Melbourne). The app will establish an encrypted connection, and you'll see a "VPN" indicator in your status bar confirming the connection is active.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">6</span> Configure Auto-Connect</h3>
+                    <p>In the app settings, enable "Auto-Connect on Wi-Fi" or "Connect on Untrusted Networks." This ensures your VPN activates automatically whenever you join public Wi-Fi, providing seamless protection without requiring manual connection. You can designate your home and work networks as trusted to avoid unnecessary VPN use there.</p>
+                </div>
+
+                <div class="success-box">
+                    <h4>✓ Verification: Confirming Your iPhone VPN Works</h4>
+                    <p>To verify your VPN is functioning correctly:</p>
+                    <ol style="margin-top: 10px;">
+                        <li>Visit <strong>whatismyipaddress.com</strong> in Safari whilst connected to your VPN</li>
+                        <li>Verify the displayed IP address matches your VPN server location (not your real location)</li>
+                        <li>Check for the VPN icon in your status bar (confirms active connection)</li>
+                        <li>Visit <strong>dnsleaktest.com</strong> and run an extended test to verify DNS requests aren't leaking</li>
+                    </ol>
+                    <p style="margin-top: 10px;">If all tests pass, your iPhone VPN is properly configured and protecting your privacy.</p>
+                </div>
+
+                <h3>How to Turn Off VPN on iPhone</h3>
+
+                <p>Disconnecting when necessary is straightforward:</p>
+
+                <ul>
+                    <li><strong>Method 1:</strong> Open your VPN app and tap the disconnect button</li>
+                    <li><strong>Method 2:</strong> Go to Settings → General → VPN & Device Management → VPN, toggle off the connection</li>
+                    <li><strong>Method 3:</strong> Use Control Centre (swipe down from top-right) if your VPN app supports Control Centre integration</li>
+                </ul>
+
+                <p>I recommend keeping your VPN connected whenever possible, but legitimate reasons to disconnect include accessing banking apps that block VPNs, troubleshooting network issues, or conserving battery when on trusted networks.</p>
+
+                <h2 id="android-setup">How to Use VPN on Android</h2>
+
+                <p>Android VPN setup follows a similar process to iPhone with slight variations depending on your Android version (these instructions work for Android 10 and later).</p>
+
+                <div class="step-card">
+                    <h3><span class="step-number">1</span> Install VPN App from Play Store</h3>
+                    <p>Open Google Play Store, search for your VPN provider's official app, and install it. Verify authenticity through the developer name and read recent reviews to ensure you're downloading the legitimate app, not an imposter.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">2</span> Launch and Login</h3>
+                    <p>Open the app and log in with your account credentials. Some providers allow in-app subscription purchases if you haven't subscribed yet, though subscribing through their website often offers better pricing.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">3</span> Approve Connection Request</h3>
+                    <p>Android will display a connection request dialogue warning that the app wants to monitor network traffic. This warning appears for all VPN apps—it's standard Android security. Tap "OK" to approve. Unlike iPhone, this approval is requested each time you first connect after device restart.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">4</span> Select Protocol and Server</h3>
+                    <p>Choose WireGuard protocol for optimal speed and battery efficiency. Select an Australian server for general browsing, or international servers when you need to access overseas content. Most apps remember your preferences for future connections.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">5</span> Connect and Verify</h3>
+                    <p>Tap the connect button. You'll see a key icon in your notification bar when the VPN is active. Verify your connection by visiting whatismyipaddress.com and confirming your IP address reflects your VPN server location, not your real location.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">6</span> Configure Always-On VPN (Optional but Recommended)</h3>
+                    <p>Android offers system-level VPN protection beyond individual apps. Go to Settings → Network & Internet → VPN, select your VPN, and enable "Always-on VPN" and "Block connections without VPN." This ensures your device never connects to the internet without VPN protection, even if the app crashes.</p>
+                </div>
+
+                <h3>How to Turn Off VPN on Android</h3>
+
+                <ul>
+                    <li><strong>Method 1:</strong> Open your VPN app and tap disconnect</li>
+                    <li><strong>Method 2:</strong> Swipe down to access Quick Settings, tap the VPN notification, and select disconnect</li>
+                    <li><strong>Method 3:</strong> Go to Settings → Network & Internet → VPN, select your connection, and toggle off</li>
+                </ul>
+
+                <div class="info-box">
+                    <h4>📱 Mia's Mobile VPN Tips</h4>
+                    <ul>
+                        <li>Enable kill switch in your app settings to prevent accidental unprotected browsing if VPN disconnects</li>
+                        <li>Use split tunnelling if you need certain apps (like local banking) to bypass VPN whilst others remain protected</li>
+                        <li>For 5G connections, ensure your VPN protocol is set to WireGuard for optimal performance with high-speed mobile data</li>
+                        <li>Add your VPN app to battery optimisation exceptions so Android doesn't kill it to save power</li>
+                        <li>Configure auto-connect on mobile data in addition to Wi-Fi—Australian metadata retention affects mobile connections too</li>
+                    </ul>
+                </div>
+
+                <h2 id="windows-setup">How to Setup VPN on Windows</h2>
+
+                <p>Windows computers offer multiple VPN setup methods. The easiest is using your provider's dedicated app, which I recommend for most users.</p>
+
+                <div class="step-card">
+                    <h3><span class="step-number">1</span> Download Windows VPN Client</h3>
+                    <p>Visit your VPN provider's website and download their Windows application. Download directly from the provider's site, not third-party download sites. The installer is typically 30-50MB and supports Windows 10 and 11.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">2</span> Install and Launch</h3>
+                    <p>Run the installer (you'll need administrator privileges), follow the installation wizard, and launch the application after installation completes. The installer creates a desktop shortcut and adds the VPN to your system tray.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">3</span> Sign In and Configure</h3>
+                    <p>Enter your account credentials. In the settings menu, configure your preferences: select WireGuard or OpenVPN protocol, enable the kill switch, set auto-connect on startup, and choose whether to start the app when Windows boots.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">4</span> Connect</h3>
+                    <p>Select a server location and click connect. The application typically shows connection status, current IP address, data transferred, and connection duration. You can minimise the app to the system tray where it runs discreetly in the background.</p>
+                </div>
+
+                <h3>Manual Windows VPN Setup (Advanced)</h3>
+
+                <p>For users who prefer native Windows VPN configuration without third-party apps:</p>
+
+                <ol>
+                    <li>Open Settings → Network & Internet → VPN → Add VPN</li>
+                    <li>Enter connection details provided by your VPN service (server address, protocol, authentication type)</li>
+                    <li>Save the configuration and connect through Windows network settings</li>
+                </ol>
+
+                <p>However, I recommend using provider apps—they're easier to configure, automatically update, include kill switches, and optimise server selection. Manual configuration requires technical knowledge and lacks convenient features built into dedicated apps.</p>
+
+                <h2 id="router-setup">How to Setup VPN on Router</h2>
+
+                <p>Installing a VPN on your router protects every device on your network automatically—phones, computers, smart TVs, gaming consoles, IoT devices—without needing individual VPN apps. This is particularly valuable for devices that don't support VPN apps, like Apple TV, PlayStation, or smart home devices.</p>
+
+                <h3>Router VPN Prerequisites</h3>
+
+                <p>Before beginning router setup, verify:</p>
+
+                <ul>
+                    <li><strong>Router compatibility:</strong> Your router must support VPN client functionality. Popular compatible routers include ASUS RT-series, Netgear Nighthawk models, and any router running DD-WRT or Tomato firmware. Check your router documentation or your VPN provider's compatibility list.</li>
+                    <li><strong>VPN provider support:</strong> Most premium VPNs provide router setup guides and configuration files. Verify your provider supports router installation before attempting.</li>
+                    <li><strong>Technical comfort:</strong> Router configuration requires moderate technical skills. If you're uncomfortable accessing router admin interfaces or following detailed technical instructions, consider pre-configured VPN routers or professional setup assistance.</li>
+                </ul>
+
+                <h3>General Router VPN Setup Process</h3>
+
+                <p>Specific steps vary by router model, but the general process is:</p>
+
+                <div class="step-card">
+                    <h3><span class="step-number">1</span> Access Router Admin Interface</h3>
+                    <p>Open a web browser and navigate to your router's admin panel (commonly 192.168.1.1, 192.168.0.1, or 10.0.0.1). Login with your administrator credentials. If you've never changed them, check the sticker on your router or documentation for default credentials—change them immediately after setup for security.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">2</span> Locate VPN Client Section</h3>
+                    <p>Navigate to the VPN client configuration section. This might be under "Advanced Settings," "VPN," "Services," or "Administration" depending on your router model and firmware. Look for "VPN Client" (not "VPN Server" which serves the opposite purpose).</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">3</span> Download Configuration Files</h3>
+                    <p>Log into your VPN provider's website and download OpenVPN configuration files for your desired server locations. These .ovpn files contain server addresses, ports, encryption settings, and authentication details.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">4</span> Import Configuration</h3>
+                    <p>In your router's VPN client section, import the .ovpn configuration file or manually enter connection details (server address, port, protocol, encryption settings). Enter your VPN account username and password in the authentication fields.</p>
+                </div>
+
+                <div class="step-card">
+                    <h3><span class="step-number">5</span> Connect and Test</h3>
+                    <p>Save settings and initiate the VPN connection. Your router will establish an encrypted tunnel to the VPN server. Verify success by checking connection status in the router interface, then test by visiting whatismyipaddress.com from any device on your network—all should show the VPN server's IP address.</p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>⚠️ Router VPN Performance Considerations</h4>
+                    <p>Router-based VPNs encrypt all network traffic, which requires significant processing power. Budget routers often struggle with VPN encryption, resulting in dramatically reduced internet speeds. If your router has a weak processor (common in ISP-provided routers), you might experience 50-70% speed reduction.</p>
+                    <p style="margin-top: 15px;">For optimal performance, consider dedicated VPN routers with powerful processors specifically designed for encryption workloads, or use selective device-based VPNs rather than routing your entire network through VPN if performance becomes problematic.</p>
+                </div>
+
+                <h2 id="streaming">VPN Setup for Streaming Services</h2>
+
+                <p>Accessing geo-restricted streaming content is one of the most popular VPN applications. However, streaming services actively detect and block VPN connections, requiring specific configuration strategies.</p>
+
+                <h3>Why Streaming Services Block VPNs</h3>
+
+                <p>Netflix, Disney+, Stan, BBC iPlayer, and other platforms restrict content by geographic region due to licensing agreements with content producers. Using a VPN to bypass these restrictions violates their terms of service (though not Australian law), so they invest significant resources in detecting and blocking VPN connections.</p>
+
+                <h3>Strategies for Reliable Streaming Access</h3>
+
+                <ul>
+                    <li><strong>Use premium VPNs:</strong> Budget VPNs are quickly detected and blocked. ExpressVPN, NordVPN, and Surfshark maintain dedicated streaming servers that work reliably with major platforms.</li>
+                    <li><strong>Select streaming-optimised servers:</strong> Many providers designate specific servers for streaming. These servers use technologies to avoid detection and are regularly rotated when blocked.</li>
+                    <li><strong>Clear cookies and cache:</strong> Streaming services use cookies to remember your location. Clear browser cookies or use incognito/private browsing mode when accessing services through VPN.</li>
+                    <li><strong>Try different servers:</strong> If one server is blocked, try another in the same country. Providers maintain multiple servers per location, and some work better than others for specific streaming services.</li>
+                    <li><strong>Use VPN apps on streaming devices:</strong> Install VPN apps directly on devices like Fire TV, Apple TV (through router configuration), or Smart TVs rather than relying solely on router-based VPN which services may detect more easily.</li>
+                </ul>
+
+                <h3>Accessing Australian Streaming Services Overseas</h3>
+
+                <p>Australian travellers often want to maintain access to Stan, Kayo Sports, ABC iView, and other Australian services whilst abroad. This is straightforward:</p>
+
+                <ol>
+                    <li>Connect to an Australian VPN server (Sydney or Melbourne) before accessing the service</li>
+                    <li>If you encounter blocks, try different Australian servers—some work better than others</li>
+                    <li>Ensure you're subscribed whilst in Australia (some services verify payment methods)</li>
+                    <li>Clear browser data if you accessed the service without VPN previously during your trip</li>
+                </ol>
+
+                <div class="info-box">
+                    <h4>📺 Mia's Streaming Success Tips</h4>
+                    <p>After extensive testing of VPN streaming performance for Australian users, I've found ExpressVPN offers the most reliable access to international streaming services, whilst Surfshark provides excellent value for families needing simultaneous connections. NordVPN's SmartPlay feature automatically selects optimal servers for streaming without manual configuration.</p>
+                    <p style="margin-top: 15px;">Remember: streaming service detection methods evolve constantly. What works today might be blocked tomorrow. Choose providers that actively maintain streaming compatibility and update their infrastructure regularly. <a href="vpn-cost-value.html#streaming-performance">See my detailed streaming performance analysis</a>.</p>
+                </div>
+
+                <h2 id="china-vpn">VPN Setup for Travel to China</h2>
+
+                <p>China presents unique VPN challenges due to the Great Firewall's sophisticated VPN detection and blocking systems. Australians travelling to China need careful preparation before departure.</p>
+
+                <h3>Pre-Departure Preparation (Essential)</h3>
+
+                <p>Complete these steps before entering China—VPN setup is extremely difficult from within the country:</p>
+
+                <ol>
+                    <li><strong>Subscribe to VPN services that work in China:</strong> ExpressVPN, NordVPN, and Astrill are currently most reliable, though effectiveness varies. Subscribe and test before your trip.</li>
+                    <li><strong>Download VPN apps on all devices:</strong> Install apps on phones, tablets, and laptops before departure. You cannot access app stores or VPN websites easily from China.</li>
+                    <li><strong>Download backup VPN apps:</strong> Install 2-3 different VPN providers as backup options. If one fails, you have alternatives without needing to troubleshoot from a blocked network.</li>
+                    <li><strong>Configure obfuscation:</strong> Enable your VPN's obfuscation or stealth mode, which disguises VPN traffic as regular HTTPS to evade detection.</li>
+                    <li><strong>Save configuration files:</strong> Download OpenVPN configuration files to your device as backup. If apps fail, you can potentially configure VPNs manually.</li>
+                    <li><strong>Test everything:</strong> Verify all apps connect successfully and access blocked services (Google, Facebook, Instagram) before your departure.</li>
+                </ol>
+
+                <h3>Optimal VPN Settings for China</h3>
+
+                <ul>
+                    <li><strong>Protocol:</strong> Use OpenVPN with obfuscation, or proprietary protocols designed to bypass Chinese detection (like ExpressVPN's Lightway). WireGuard is often blocked more effectively.</li>
+                    <li><strong>Server location:</strong> Connect to nearby servers (Hong Kong, Japan, Singapore) for better speed and reliability than distant servers.</li>
+                    <li><strong>Port selection:</strong> Use port 443 (standard HTTPS port) which is less likely to be blocked than alternative ports.</li>
+                    <li><strong>Auto-reconnect:</strong> Enable automatic reconnection since the Great Firewall periodically disrupts VPN connections.</li>
+                </ul>
+
+                <div class="warning-box">
+                    <h4>⚠️ China VPN Reliability Warning</h4>
+                    <p>Even with proper preparation, VPN functionality in China is unpredictable. Connections may be slow, unstable, or completely blocked during politically sensitive periods. The Great Firewall is continuously updated to detect new VPN technologies. Have realistic expectations and backup communication plans that don't rely on blocked services.</p>
+                    <p style="margin-top: 15px;">Whilst individual VPN use by foreigners typically faces no legal consequences, China technically prohibits unauthorised VPN services. Exercise appropriate caution and understand local regulations.</p>
+                </div>
+
+                <h2 id="advanced-settings">Advanced VPN Configuration</h2>
+
+                <p>Beyond basic setup, several advanced configurations optimise your VPN for specific use cases.</p>
+
+                <h3>Split Tunnelling Configuration</h3>
+
+                <p>Split tunnelling allows you to route some traffic through your VPN whilst other traffic bypasses it, accessing the internet directly. Common use cases:</p>
+
+                <ul>
+                    <li><strong>Banking apps:</strong> Route banking apps directly to avoid blocks some banks place on VPN connections</li>
+                    <li><strong>Local services:</strong> Access local streaming services or websites that detect and block VPN connections</li>
+                    <li><strong>Performance optimisation:</strong> Bypass VPN for large downloads or activities that don't require privacy protection, maximising speed</li>
+                    <li><strong>Gaming:</strong> Route games directly to reduce latency whilst protecting other activities through VPN</li>
+                </ul>
+
+                <p>Enable split tunnelling in your VPN app settings and specify which apps or websites should bypass the VPN. Most premium providers offer this feature on desktop and mobile platforms.</p>
+
+                <h3>Kill Switch Configuration</h3>
+
+                <p>Kill switches automatically block all internet traffic if your VPN disconnects, preventing accidental exposure of your real IP address and unencrypted data. This is essential for maintaining privacy during temporary connection drops.</p>
+
+                <p>Enable kill switch in your VPN app settings. I recommend system-level kill switches (available on Windows and Android) rather than app-level switches—they provide protection even if the VPN app crashes or is forcibly closed.</p>
+
+                <h3>Multi-Hop (Double VPN) Configuration</h3>
+
+                <p>Multi-hop routes your traffic through two sequential VPN servers before reaching its destination, providing additional privacy layers. Your ISP sees only the first VPN server, the first server only sees the second server, and the destination sees only the second server's IP address.</p>
+
+                <p>This configuration offers enhanced privacy but significantly reduces speed due to double encryption and longer routing paths. I recommend multi-hop only for users with specific high-privacy requirements (journalists, activists, researchers) rather than general use.</p>
+
+                <div class="success-box">
+                    <h4>✓ Mia's Configuration Recommendations</h4>
+                    <p>For most Australians, I recommend this configuration balance:</p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Always enabled:</strong> Kill switch, DNS leak protection, auto-connect on public Wi-Fi</li>
+                        <li><strong>Enabled for mobile devices:</strong> WireGuard protocol, auto-reconnect on network changes</li>
+                        <li><strong>Consider enabling:</strong> Split tunnelling for banking apps, IPv6 leak protection</li>
+                        <li><strong>Advanced users only:</strong> Multi-hop connections, custom DNS servers, SOCKS5 proxy</li>
+                    </ul>
+                    <p style="margin-top: 15px;">This configuration provides robust protection without unnecessary complexity or performance degradation. Adjust based on your specific privacy requirements and technical comfort level.</p>
+                </div>
+
+                <h2>Conclusion: Your VPN Setup Checklist</h2>
+
+                <p>Proper VPN setup ensures you're genuinely protected rather than merely feeling protected. Use this checklist to verify your configuration is secure and optimised:</p>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Setup Element</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VPN installed on all devices (phone, computer, tablet)</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>WireGuard protocol selected for optimal performance</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>Kill switch enabled to prevent accidental exposure</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>Auto-connect configured for public Wi-Fi networks</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>DNS leak protection enabled</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>Connection verified using IP check websites</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>DNS leak test completed successfully</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>Split tunnelling configured if needed</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>Router VPN configured (if desired)</td>
+                                <td>☐</td>
+                            </tr>
+                            <tr>
+                                <td>Streaming access tested for required services</td>
+                                <td>☐</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Once you've completed this checklist, you have properly configured, verified VPN protection across all your devices. You're now protecting your privacy from ISP surveillance, securing your connections on public Wi-Fi, and maintaining control over your digital footprint.</p>
+
+                <p>Remember that VPN setup isn't one-time—periodically verify your configuration remains effective, update your VPN apps when new versions release, and adjust settings as your needs evolve. <a href="index.html">Return to the main page to explore additional VPN topics</a>, or <a href="vpn-cost-value.html">review my provider recommendations to ensure you're getting the best value for your investment</a>.</p>
+
+                <div class="related-articles">
+                    <div class="related-card">
+                        <h4>VPN Safety & Security</h4>
+                        <p>Understanding VPN protection, limitations, and security best practices</p>
+                        <a href="vpn-safety-australia.html">Security Analysis →</a>
+                    </div>
+
+                    <div class="related-card">
+                        <h4>How VPNs Work</h4>
+                        <p>Technical explanation of encryption, protocols, and functionality</p>
+                        <a href="how-vpn-works.html">Technical Details →</a>
+                    </div>
+
+                    <div class="related-card">
+                        <h4>Cost & Value</h4>
+                        <p>Comparing providers and determining best VPN value for Australians</p>
+                        <a href="vpn-cost-value.html">Compare Options →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Mia Wexford</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.7;">Melbourne-based IT security specialist with 15+ years experience. CISSP certified and dedicated to helping Australians protect their digital privacy through expert, independent guidance.</p>
+                    <a href="https://miawexford.top/about" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Full Biography →</a>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-vpn-works.html">How VPNs Work</a></li>
+                        <li><a href="vpn-safety-australia.html">Safety & Security</a></li>
+                        <li><a href="vpn-setup-guide.html">Setup Guide</a></li>
+                        <li><a href="vpn-cost-value.html">Cost & Value</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Trusted Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.cyber.gov.au/" target="_blank" rel="noopener">Australian Cyber Security Centre</a></li>
+                        <li><a href="https://www.oaic.gov.au/" target="_blank" rel="noopener">Office of the Australian Information Commissioner</a></li>
+                        <li><a href="https://www.esafety.gov.au/" target="_blank" rel="noopener">eSafety Commissioner</a></li>
+                        <li><a href="https://www.accc.gov.au/consumers/scams" target="_blank" rel="noopener">ACCC Scam Watch</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Expert Disclaimer</h3>
+                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6;">This website provides educational information about VPN technology and cybersecurity. Whilst I strive for accuracy, technology evolves rapidly. Always verify current information with official sources and choose VPN services based on your specific needs.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mia Wexford - Independent VPN & Security Consultant. All rights reserved.</p>
+                <p style="margin-top: 10px;">Last updated: January 2026 | Melbourne, Australia</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
